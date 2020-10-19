@@ -1,0 +1,25 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ${DEPLOYMENT_NAME}
+  namespace: ${DEPLOYMENT_NAMESPACE}
+spec:
+  backoffLimit: 6
+  completions: 1
+  parallelism: 1
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        job-name: ${DEPLOYMENT_NAME}
+      name: ${DEPLOYMENT_NAME}
+      annotations:
+        cni.projectcalico.org/ipv4pools: ${IPV4POOL}
+    spec:
+      serviceAccountName: ${DEPLOYMENT_NAME}
+      containers:
+      - image: ${IMAGE}
+        name: study-kotlin-liquibase
+      restartPolicy: OnFailure
+      schedulerName: default-scheduler
+      terminationGracePeriodSeconds: 30

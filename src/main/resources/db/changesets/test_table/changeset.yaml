@@ -1,0 +1,49 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: "n.khromushkin"
+      context: dev, testing, prod
+      changes:
+        - sqlFile:
+            path: db/changesets/test_table/init_ddl.sql
+            endDelimiter: "\n;"
+        - sqlFile:
+            path: db/changesets/test_table/init_dcl.sql
+            endDelimiter: "\n;"
+        - sqlFile:
+            path: db/changesets/test_table/init_dml_refs.sql
+            endDelimiter: "\n;"
+      rollback:
+        sqlFile:
+          path: db/changesets/test_table/init_rollback.sql
+  - changeSet:
+      id: 2
+      author: "n.khromushkin"
+      context: dev
+      changes:
+        - sqlFile:
+            path: db/changesets/test_table/init_dml_dev.sql
+            endDelimiter: "\n;"
+      rollback:
+  - changeSet:
+      id: 3
+      author: "n.khromushkin"
+      context: dev, testing, prod
+      changes:
+        - sqlFile:
+            path: db/changesets/test_table/20200117/add_foobar_column.sql
+            endDelimiter: "\n;"
+      rollback:
+        sqlFile:
+          path: db/changesets/test_table/20200117/drop_foobar_column.sql
+  - changeSet:
+      id: 4
+      author: "n.khromushkin"
+      context: dev, testing, prod
+      changes:
+        - sqlFile:
+            path: db/changesets/test_table/20201025/add_tst_column.sql
+            endDelimiter: "\n;"
+      rollback:
+        sqlFile:
+          path: db/changesets/test_table/20201025/drop_tst_column.sql

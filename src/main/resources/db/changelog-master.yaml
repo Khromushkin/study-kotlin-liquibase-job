@@ -1,0 +1,3 @@
+databaseChangeLog:
+  - include:
+      file: "db/changesets/test_table/changeset.yaml"

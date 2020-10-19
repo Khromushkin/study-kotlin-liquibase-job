@@ -1,0 +1,39 @@
+{
+  "generatorVersion": "0.44.0",
+  "application": {
+    "type": "kotlin",
+    "name": "study-kotlin-liquibase",
+    "space": "study",
+    "description": "test service db"
+  },
+  "ports": [],
+  "docker": {
+    "env": {
+      "JAVA_OPTS": "",
+      "JAVA_ARGS": "",
+      "JAVA_MAIN_CLASS": "",
+      "SPRING_CONFIG_LOCATION_PARAMETER_NAME": "spring.config.additional-location",
+      "JAVA_APP_JAR": "study-kotlin-liquibase.jar"
+    },
+    "labels": {},
+    "files": []
+  },
+  "sourcesDir": ".",
+  "infraDir": "./infra",
+  "kuber": {
+    "env": {},
+    "service": {
+      "isHeadless": true
+    }
+  },
+  "build": {
+    "tool": "maven",
+    "artifact": "target/study-kotlin-liquibase.jar",
+    "unzipRequired": false
+  },
+  "teamcity": true,
+  "git": {
+    "project": "study/kotlin-liquibase",
+    "vcs": "gerrit"
+  }
+}

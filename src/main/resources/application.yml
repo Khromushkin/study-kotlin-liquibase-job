@@ -1,0 +1,7 @@
+spring:
+  application.name: study-kotlin-liquibase
+
+database:
+  jdbcUrl: ${secret.liquibase.jdbcUrl:}
+  user: ${secret.liquibase.user:}
+  password: ${secret.liquibase.password:}
