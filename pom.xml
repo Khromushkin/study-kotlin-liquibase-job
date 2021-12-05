@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>qiwi.common-platform</groupId>
-        <artifactId>qiwi-common-platform-parent</artifactId>
-        <version>2.219.0</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.5.3</version>
     </parent>
 
     <groupId>ru.qiwi.study</groupId>
@@ -18,15 +18,15 @@
     <name>study-kotlin-liquibase</name>
     <description>test service db</description>
     <organization>
-        <name>QIWI PLC</name>
-        <url>https:/.domain/url>
+        <name>@product_developer</name>
+        <url>mailto:nikita@product-developer.ru</url>
     </organization>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
 
-        <kotlin.version>1.2.51</kotlin.version>
+        <kotlin.version>1.6.0</kotlin.version>
 
         <versions-maven-plugin.version>2.1</versions-maven-plugin.version>
         <ktlint-maven-plugin.version>0.1.5</ktlint-maven-plugin.version>
@@ -38,17 +38,31 @@
 
     <dependencies>
         <dependency>
-            <groupId>qiwi.common-platform</groupId>
-            <artifactId>qiwi-common-platform-boot</artifactId>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
         </dependency>
         <dependency>
-            <groupId>qiwi.common-platform</groupId>
-            <artifactId>qiwi-common-platform-logging-template</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
         <dependency>
-            <groupId>qiwi.common-platform</groupId>
-            <artifactId>qiwi-common-platform-cloud-kubernetes</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
 
         <dependency>
             <groupId>org.springframework</groupId>
@@ -118,35 +132,6 @@
         </dependency>
     </dependencies>
 
-    <profiles>
-        <profile>
-            <id>update-dependency-version</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>versions-maven-plugin</artifactId>
-                        <version>${versions-maven-plugin.version}</version>
-                        <executions>
-                            <execution>
-                                <id>platform-update-parent</id>
-                                <inherited>false</inherited>
-                                <goals>
-                                    <goal>update-parent</goal>
-                                </goals>
-                                <phase>validate</phase>
-                            </execution>
-                        </executions>
-                        <configuration>
-                            <allowSnapshots>false</allowSnapshots>
-                            <generateBackupPoms>false</generateBackupPoms>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
-
     <build>
         <sourceDirectory>src/main/kotlin</sourceDirectory>
         <testSourceDirectory>src/test/kotlin</testSourceDirectory>
@@ -201,7 +186,7 @@
                     <dependency>
                         <groupId>org.jetbrains.kotlin</groupId>
                         <artifactId>kotlin-maven-allopen</artifactId>
-                        <version>${kotlin.version}</version>
+                        <version>1.6.0</version>
                     </dependency>
                 </dependencies>
             </plugin>
@@ -238,35 +223,6 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>com.github.z3d1k</groupId>
-                <artifactId>ktlint-maven-plugin</artifactId>
-                <version>${ktlint-maven-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <id>lint</id>
-                        <goals>
-                            <goal>lint</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>format</id>
-                        <goals>
-                            <goal>format</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <outputToConsole>true</outputToConsole>
-                    <groupByFile>true</groupByFile>
-                    <verbose>true</verbose>
-                    <reporters>
-                        <checkstyle.output>${project.build.directory}/ktlint.xml</checkstyle.output>
-                    </reporters>
-                    <failOnError>true</failOnError>
-                </configuration>
-            </plugin>
-
         </plugins>
 
         <pluginManagement>
@@ -288,14 +244,4 @@
             </plugins>
         </pluginManagement>
     </build>
-
-    <repositories>
-        <repository>
-            <id>qiwi</id>
-            <url>http://maven.domainnexus/content/groups/public</url>
-            <snapshots>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-        </repository>
-    </repositories>
 </project>

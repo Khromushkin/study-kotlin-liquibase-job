@@ -8,7 +8,7 @@ import java.util.Properties
 import javax.annotation.PostConstruct
 import javax.sql.DataSource
 
-//@Service
+@Service
 class LiquibaseMigrationServiceImpl(
     private val _dataSource: DataSource
 ) : SpringLiquibase() {
