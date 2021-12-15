@@ -1,4 +1,4 @@
-package ru.qiwi.study.test.svc.db;
+package ru.product_developer.study.test.svc.db;
 
 import org.springframework.boot.autoconfigure.liquibase.LiquibaseDataSource;
 import org.springframework.boot.jdbc.DataSourceBuilder;

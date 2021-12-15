@@ -1,4 +1,4 @@
-package ru.qiwi.study.test.svc.db.config
+package ru.product_developer.study.test.svc.db.config
 
 import org.springframework.boot.context.properties.ConfigurationProperties
 import org.springframework.validation.annotation.Validated

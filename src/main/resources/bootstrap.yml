@@ -3,11 +3,3 @@ spring:
     name: study-kotlin-liquibase
   profiles:
     active: ${ENVIRONMENT_PROFILE_NAME:dev}
-
-qiwi:
-  common:
-    autodiscovery: none
-    product:
-      name: study
-    config: none
-    secret: vault

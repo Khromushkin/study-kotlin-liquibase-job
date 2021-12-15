@@ -1,4 +1,4 @@
-package ru.qiwi.study.test.svc.db
+package ru.product_developer.study.test.svc.db
 
 import liquibase.Liquibase
 import liquibase.integration.spring.SpringLiquibase

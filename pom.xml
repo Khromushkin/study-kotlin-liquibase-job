@@ -10,7 +10,7 @@
         <version>2.5.3</version>
     </parent>
 
-    <groupId>ru.qiwi.study</groupId>
+    <groupId>ru.product-developer</groupId>
     <artifactId>study-kotlin-liquibase</artifactId>
     <version>0.8.0</version>
     <packaging>jar</packaging>

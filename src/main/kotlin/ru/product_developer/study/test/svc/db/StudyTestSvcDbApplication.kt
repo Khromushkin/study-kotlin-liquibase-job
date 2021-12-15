@@ -1,9 +1,9 @@
-package ru.qiwi.study.test.svc.db
+package ru.product_developer.study.test.svc.db
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.context.properties.EnableConfigurationProperties
-import ru.qiwi.study.test.svc.db.config.DatabaseProperties
+import ru.product_developer.study.test.svc.db.config.DatabaseProperties
 import kotlin.system.exitProcess
 
 @SpringBootApplication

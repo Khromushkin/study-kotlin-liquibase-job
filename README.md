@@ -1,9 +1,14 @@
-# study-kotlin-liquibase #
+# study-kotlin-liquibase-job #
 
 
 #### What is this repository for? ####
 
-This software is for SpringLiquibase usage demonstration with Kotlin.
+This software is for Engineering practices demonstration:
+
+* Database versioning by using Liquibase;
+* SpringLiquibase integration;
+* Migration tests by using TestContainers;
+* Database migrations deployment by using Kubernetes Job
 
 #### How do I get set up? ####
 
@@ -18,30 +23,6 @@ Or you can create a full package and launch it from any place:
 mvn clean package && java -jar target/study-kotlin-liquibase.jar
 ```
 
-
-#### Verify, build and deploy ####
-
-You can verify project by running
-```
-make verify
-```
-
-If you want to build a Docker image with this project, you can run this:
-```
-make build
-```
-
-or to build an image and push it to the Docker registry (default is dcr.domain:
-```
-make DOCKER_REGISTRY=dcr.domainVERSION_SUFFIX='-12345' build_push
-```
-
-If you need to deploy image to the Kubernetes cluster, use the following command:
-```
-make IMAGE=dcr.domainstudy-kotlin-liquibase:1.0.0-12345 deploy
-```
-
-
 #### Built With ####
 
 * [Spring Boot](https://projects.spring.io/spring-boot/) - Framework for easy bootstrapping and developing new Spring applications.
@@ -52,4 +33,4 @@ make IMAGE=dcr.domainstudy-kotlin-liquibase:1.0.0-12345 deploy
 
 
 #### TODO ####
-* Remove qiwi-common-platform dependency and add Travis CI integration
+* Add Travis CI or GH Actions pipeline
